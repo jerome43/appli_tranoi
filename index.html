@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Tranoi</title>
+    <meta name="description" content="Tranoi"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CODELAB: Add iOS meta tags and icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Tranoi PWA">
+    <link rel="apple-touch-icon" href="/image/icons/icon-128.png">
+    <meta name="theme-color" content="#2F3BA2" />
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="image/favicon.ico" />
+    <link rel="stylesheet" href="css/normalize.css" media="all"/>
+    <link rel="stylesheet" href="css/app.css" media="all"/>
+</head>
+<body id="body">
+
+    <header>
+        <img id="logo" src="image/LOGO-TRANOI-NOIR.png" alt="logo"/>
+    </header>
+
+    <div id="main">
+
+        <!-- Menu Top -->
+        <nav id="menuTop">
+            <ul id="menuTop_ul"></ul>
+        </nav>
+
+        <!-- zone d'affichage des plans -->
+        <div id="mapContainer">
+            <div id="mapContainer_home">
+                <img id ="mapContainer_home_img" src="image/maps/Tranoi_planParisTel.webp"  alt="planParis"/>
+                <!--img id="CARREAU_DU_TEMPLE" data-secteur="CARREAU DU TEMPLE" src="image/thumbnails/carreauThumbnail.png" lass="mapContainer_home_thumbmail" alt="carreau"-->
+                <img id="PALAIS_DE_LA_BOURSE" data-secteur="PALAIS DE LA BOURSE" src="image/thumbnails/Bourse.png" class="mapContainer_home_thumbmail" alt="bourse"/>
+                <img id="CARROUSEL_DU_LOUVRE" data-secteur="CARROUSEL DU LOUVRE" src="image/thumbnails/Louvre.png" class="mapContainer_home_thumbmail" alt="louvre"/>
+            </div>
+            <div id="mapContainer_phaser" style="display: none"></div>
+            <div id="mapContainer_designers">
+                <img src="image/logo/designer/native.webp"  alt="" id="B06DES" data-name="NATIVE DUBAI"/>
+                <!--img src="image/logo/logo_ATHANASIOU.jpg"  alt="" id="K03DES" data-name="ATHANASIOU"/>
+                <img src="image/logo/logo_bogdar.png"  alt="" id="K12DES" data-name="BOGDAR"/-->
+            </div>
+        </div>
+
+        <!-- Clavier et liste des stands-->
+        <div id="searchContainer">
+
+            <nav id="searchContainer_liste">
+                <ul id="searchContainer_liste_ul"></ul>
+                <div id="searchContainer_liste_animation"></div>
+            </nav>
+
+            <div id="clavier">
+                <!-- formulaire de recherche-->
+                <p>search designer</p>
+                <img id="clearClavier" src="image/Close.png" alt="close.png"/>
+                <form id="formSearch">
+                    <label for="textSearch"><input type="text" id="textSearch"/></label>
+                </form>
+
+                <div class="ligneClavier">
+                    <div data-value="1" class="toucheClavier">1</div>
+                    <div data-value="2" class="toucheClavier">2</div>
+                    <div data-value="3" class="toucheClavier">3</div>
+                    <div data-value="4" class="toucheClavier">4</div>
+                    <div data-value="5" class="toucheClavier">5</div>
+                    <div data-value="6" class="toucheClavier">6</div>
+                    <div data-value="7" class="toucheClavier">7</div>
+                    <div data-value="8" class="toucheClavier">8</div>
+                    <div data-value="9" class="toucheClavier">9</div>
+                    <div data-value="0" class="toucheClavier">0</div>
+                    <div data-value="suppr" class="toucheClavier">&#8592</div>
+                </div>
+
+                <div class="ligneClavier">
+                    <div data-value="A" class="toucheClavier">A</div>
+                    <div data-value="Z" class="toucheClavier">Z</div>
+                    <div data-value="E" class="toucheClavier">E</div>
+                    <div data-value="R" class="toucheClavier">R</div>
+                    <div data-value="T" class="toucheClavier">T</div>
+                    <div data-value="Y" class="toucheClavier">Y</div>
+                    <div data-value="U" class="toucheClavier">U</div>
+                    <div data-value="I" class="toucheClavier">I</div>
+                    <div data-value="O" class="toucheClavier">O</div>
+                    <div data-value="P" class="toucheClavier">P</div>
+                    <div data-value="'" class="toucheClavier">'</div>
+                    <div data-value="," class="toucheClavier">,</div>
+                </div>
+
+                <div class="ligneClavier">
+                    <div data-value="Q" class="toucheClavier">Q</div>
+                    <div data-value="S" class="toucheClavier">S</div>
+                    <div data-value="D" class="toucheClavier">D</div>
+                    <div data-value="F" class="toucheClavier">F</div>
+                    <div data-value="G" class="toucheClavier">G</div>
+                    <div data-value="H" class="toucheClavier">H</div>
+                    <div data-value="J" class="toucheClavier">J</div>
+                    <div data-value="K" class="toucheClavier">K</div>
+                    <div data-value="L" class="toucheClavier">L</div>
+                    <div data-value="M" class="toucheClavier">M</div>
+                    <div data-value="@" class="toucheClavier">@</div>
+                </div>
+
+                <div class="ligneClavier">
+                    <div data-value="W" class="toucheClavier">W</div>
+                    <div data-value="X" class="toucheClavier">X</div>
+                    <div data-value="C" class="toucheClavier">C</div>
+                    <div data-value="V" class="toucheClavier">V</div>
+                    <div data-value="B" class="toucheClavier">B</div>
+                    <div data-value="N" class="toucheClavier">N</div>
+                    <div data-value="_" class="toucheClavier">_</div>
+                    <div data-value="." class="toucheClavier">.</div>
+                    <div data-value="-" class="toucheClavier">-</div>
+                    <div data-value="!" class="toucheClavier">!</div>
+                </div>
+                <div class="ligneClavier">
+                    <div data-value=" " class="toucheClavier" id="toucheClavierSpace">space</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div id="partenaires">
+            <img src="image/logo/Alterfood.jpg" data-name="" alt=""/>
+            <img src="image/logo/ARAKU.jpg" data-name="" alt=""/>
+            <img src="image/logo/BESTSHOPS.jpg" data-name="" alt=""/>
+            <img src="image/logo/BOF.jpg" data-name="" alt=""/>
+            <img src="image/logo/FIJI.jpg" data-name="" alt=""/>
+            <img src="image/logo/IMA.jpg" data-name="" alt=""/>
+            <img src="image/logo/MAISONMARIET.jpg" data-name="" alt=""/>
+            <img src="image/logo/MODEM.jpg" data-name="" alt=""/>
+            <img src="image/logo/MUSCOVADO.jpg" data-name="" alt=""/>
+            <img src="image/logo/NOSSA.jpg" data-name="" alt=""/>
+            <img src="image/logo/PAWEL.jpg" data-name="" alt=""/>
+            <img src="image/logo/PETITE_FRITURE.jpg" data-name="" alt=""/>
+            <img src="image/logo/SKYTEAM.jpg" data-name="" alt=""/>
+            <img src="image/logo/TAKARAMONO.jpg" data-name="" alt="">
+            <img src="image/logo/TCD.jpg" data-name="" alt=""/>
+            <img src="image/logo/TRIVE.jpg" data-name="" alt=""/>
+            <img src="image/logo/WONDERFUL.jpg" data-name="" alt=""/>
+            <img src="image/logo/aperitif.png" data-name="" alt=""/>
+            <!--img src="image/logo/lunch.png" data-name="" alt=""/-->
+            <!--img src="image/logo/WIFI.jpg" id="wifiDES" data-name="wifi"/-->
+        </div>
+    </footer>
+
+    <script src="library/papaparse.min.js"></script>
+    <script src="library/hammer.js"></script>
+    <script src="library/phaser.min.js"></script>
+    <script src="controler/utils.js"></script>
+    <script src="controler/track.js"></script>
+    <script src="controler/mapG.js"></script>
+    <script src="controler/menuG.js"></script>
+    <script src="controler/clavier.js"></script>
+    <script src="controler/navigation.js"></script>
+    <script src="controler/partenaires.js"></script>
+    <script src="controler/mainController.js"></script>
+    <!--script>
+        // CODELAB: Register service worker.
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js')
+                    .then((reg) => {
+                console.log('Service worker registered.', reg);
+                })
+            })
+        }
+    </script-->
+</body>
+</html>

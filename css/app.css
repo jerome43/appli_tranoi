@@ -1,0 +1,362 @@
+/* app css stylesheet */
+
+/* -------------------- GENERAL ---------------------------------*/
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+    width : 1080px; /* 1080 - 8px pour tenir compte de la bordure de 2 px de part et d'autre du body*/
+    height: 1920px;
+    font-family: PatronWEB-Medium, Helvetica, sans-serif;
+    border: 4px solid #ffffff;
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* ------------------------HEADER ET MENU HAUT --------------------*/
+
+header {
+    height: 200px;
+    border-bottom: 4px solid white;
+    background-color: white;
+}
+
+
+#logo {
+    height: inherit;
+    /*width: 398px;*/
+    width: auto;
+    padding: 20px 0 60px 40px;
+}
+
+#main {
+}
+
+#searchContainer {
+    border-top: 4px solid #ffffff;
+    border-bottom: 4px solid #ffffff;
+    height: 500px;
+}
+
+
+footer {
+    height: 312px;
+    background-color: white;
+    padding: 13px 0 0 0;
+}
+
+
+#menuTop {
+    position: absolute;
+    top: 170px;
+    left:0;
+    width : 1080px;
+    height: 30px;
+    /*background-color: #444;*/
+    background-color: white;
+    color:black;
+    display: none;
+    border: 4px solid #ffffff;
+    border-bottom:none;
+}
+#menuTop ul {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    font-size: 20px;
+    height: 26px;
+    float: right;
+}
+
+#menuTop ul li {
+    display: inline-block;
+    height: inherit;
+    padding: 2px 20px 0;
+   /* margin: -2px; à mettre que si le contenu html est vide*/
+}
+
+.menuTop_li_salle_selected, #menuTop_li_secteur {
+    background-color: #000000;
+    color: white;
+}
+
+
+/* ------------------------- CANVAS ET PLAN-----------------------------*/
+
+.mapContainer_home_thumbmail {
+    position: absolute;
+}
+
+#PALAIS_DE_LA_BOURSE {
+    top:510px;
+    left:550px
+}
+
+#CARROUSEL_DU_LOUVRE {
+    top:665px;
+    left:460px
+}
+
+#CARREAU_DU_TEMPLE {
+    top:550px;
+    left:630px;
+}
+
+#mapContainer_home_img {
+    padding: 150px 0 0 120px;
+}
+
+#mapContainer {
+    z-index: 940;
+    height: 900px;
+}
+
+canvas {
+    display: block;
+    margin: auto;
+    z-index: 950;
+}
+
+#canvasPlans {
+    z-index: 970;
+}
+
+#mapContainer_phaser {
+    z-index: 971;
+    margin-right: 720px;
+}
+
+#mapContainer_designers {
+    position: absolute;
+    top: 40px;
+    left: 900px;
+}
+
+#mapContainer_designers img  {
+    width: 130px;
+    height: 130px;
+    background-color: #fff;
+    margin: 0 50px 0 0;
+    border: 1px solid #a1a1a1;
+}
+
+/* -------------- MENU DROITE ----------------------*/
+
+#searchContainer_liste {
+    position: absolute;
+    top : 1106px;
+    left : 720px;
+    float: right;
+    width : 356px;
+    height: 492px;
+    overflow: hidden;
+    border-left: 4px solid #ffffff;
+}
+
+#searchContainer_liste ul {
+    margin: 0;
+    padding: 0;
+}
+
+#searchContainer_liste_ul {
+    position: absolute;
+    top : 0; /* position par rapport à son parent searchContainer_liste*/
+    left: 0; /* position par rapport à son parent searchContainer_liste*/
+    width: inherit;
+}
+
+#searchContainer_liste_ul li {
+    height: 40px;
+    font-size: 22px;
+    line-height: 40px;
+    text-align: center;
+    overflow: hidden;
+}
+
+#searchContainer_liste_ul li:before {
+    content: url("../image/puceNormal.png");
+    margin-right: 15px;
+    vertical-align: sub;
+    color : transparent;
+}
+
+
+#searchContainer_liste_ul li.new:before {
+    content: url("../image/puceNew.png");
+    margin-right: 15px;
+    vertical-align: sub;
+    color : transparent;
+}
+
+#searchContainer_liste_ul li.normal:before {
+    content: url("../image/puceNormal.png");
+    margin-right: 15px;
+    vertical-align: sub;
+    color : transparent;
+}
+
+#searchContainer_liste_ul li.mixte:before {
+    content: url("../image/puceOnlyAtTranoi.png");
+    margin-right: 15px;
+    vertical-align: sub;
+    color: transparent;
+}
+
+#searchContainer_liste_ul li.jewel:before {
+    content: url("../image/puceJewel.png");
+    margin-right: 15px;
+    vertical-align: sub;
+    color: transparent;
+}
+
+
+#searchContainer_liste_ul li.menuSelected.mixte:before, #searchContainer_liste_ul li.menuSelected.new:before, #searchContainer_liste_ul li.menuSelected.normal:before, #searchContainer_liste_ul li.menuSelected.jewel:before {
+    display: none;
+}
+
+.menuSelected {
+     background: #000 url("../image/flecheMenu40.png") no-repeat;
+}
+
+.menuSelected.new {
+    background-color: #67b1e3;
+}
+
+.menuSelected.normal {
+    background-color:#706f6f;
+}
+
+.menuSelected.mixte {
+    background-color:#CD1719;
+}
+
+.menuSelected.jewel {
+    background-color:#DAB823;
+}
+
+
+#searchContainer_liste_animation {
+    position: absolute;
+    top:0;   /* position par rapport à son parent searchContainer_liste*/
+    left : 0;  /* position par rapport à son parent searchContainer_liste*/
+    width: inherit;
+    height: inherit;
+    display: none;
+    background-color: black;
+}
+
+@-webkit-keyframes animationMenu {
+    0%   {background-color: rgba(0,0,0,1)}
+    100% { background-color: rgba(0,0,0,0);}
+}
+
+/*---------------------- FORMULAIRE DE RECHERCHE ----------------------------*/
+
+#formSearch {
+    width: 70%;
+    margin: 0 auto 50px;
+}
+
+#textSearch {
+    padding: 5px 10px;
+    margin: 0 5px;
+    height: 55px;
+    width: 100%;
+    background-color: #ebebeb;
+    font-size: 45px;
+}
+
+
+/* ---------------------- CLAVIER VIRTUEL --------------------------*/
+
+
+#clavier {
+    width: 716px;
+    height: 492px;
+    padding: 10px 0;
+    overflow: hidden;
+}
+
+#clavier>p:first-child {
+    text-align: center;
+    font-size: 20px;
+}
+
+#clearClavier {
+    float: right;
+    margin: 9px 26px;
+}
+
+.ligneClavier {
+    margin: 12px auto;
+    text-align: center;
+
+}
+
+.toucheClavier {
+    display: inline-block;
+    padding: 6px 0 3px;
+    margin: 0 3px;
+    border-radius: 5%;
+    width: 48px;
+    color: #e0e0e0;
+    font-size: 34px;
+    text-align: center;
+    background-color: #414141;
+}
+
+#toucheClavierSpace {
+    width: 450px;
+}
+
+.black-touch {
+    background-color: black ;
+}
+
+
+.marginLeft50 {
+    margin-left: 50px;
+}
+
+
+/* ---------------------- LOGO PARTENAIRES -----------------------------*/
+
+#partenaires {
+    padding-left: 3px;
+}
+
+#partenaires img {
+    margin: 10px 0;
+    width: 115px;
+    height: 115px;
+}
+
+.float_left {
+    display: block;
+    float: left;
+}
+
+
+/* ------------------------- FONTS -----------------------------*/
+
+
+@font-face {
+    font-family: "PatronWeb-medium";
+    src: url('../fonts/PatronWEB-Medium.ttf');
+}
+@font-face {
+    font-family: "PatronWeb-light";
+    src: url('../fonts/PatronWEB-Light.ttf');
+}
+@font-face {
+    font-family: "PatronWEB-Regular";
+    src: url('../fonts/PatronWEB-Regular.ttf');
+}
+
+@font-face {
+    font-family: "FontAwesome";
+    src: url('../fonts/FontAwesome.otf');
+}

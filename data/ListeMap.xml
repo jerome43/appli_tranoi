@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <Maps>
+        <Map secteur="PALAIS DE LA BOURSE" salle="GROUND FLOOR" path="image/maps/pb_rdc.webp" pathXml="data/pb_rdc.csv" width="2144" height="1800"/>
+        <Map secteur="PALAIS DE LA BOURSE" salle="FIRST FLOOR" path="image/maps/pb_etage.webp" pathXml="data/pb_etage.csv" width="2144" height="1800"/>
+        <Map secteur="CARROUSEL DU LOUVRE" salle="GABRIEL DELORME" path="image/maps/cdl_gd.webp" pathXml="data/cdl_gd.csv" width="2144" height="1800"/>
+        <Map secteur="CARROUSEL DU LOUVRE" salle="LE NOTRE" path="image/maps/cdl_lenotre.webp" pathXml="data/cdl_lenotre.csv" width="2144" height="1800"/>
+        <Map secteur="CARROUSEL DU LOUVRE" salle="FOYER" path="image/maps/cdl_foyer.webp" pathXml="data/cdl_foyer.csv" width="2144" height="1800"/>
+</Maps>
